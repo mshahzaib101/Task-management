@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ToDo Application
+
+A simple and efficient ToDo application built with Next.js, React, and TypeScript. This application supports task management and state persistence, providing a seamless user experience.
+
+## Objective
+
+Develop a ToDo application that allows users to manage tasks efficiently with features like task creation, editing, deletion, and state persistence.
+
+## Features
+
+### Core Functionalities
+
+- **Task Management**
+
+  - Create, edit, delete, and mark tasks as complete/incomplete.
+  - Move tasks to the appropriate section when marked as complete/incomplete.
+  - Display a confirmation modal before deleting a task.
+
+- **State Management**
+
+  - Utilize React Context API / Zustand / Redux for managing application state.
+  - Persist tasks using `localStorage` to ensure data is saved across sessions.
+
+- **Validations & Error Handling**
+  - Prevent duplicate task names.
+  - Ensure task descriptions are non-empty.
+  - Handle invalid inputs, such as empty task titles.
+  - Implement a global error boundary to catch unexpected errors.
+
+### Advanced Features
+
+- **Drag & Drop Sorting**
+  - Allow users to reorder tasks within each section using drag-and-drop functionality.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js and npm installed on your machine.
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/mshahzaib101/todo-app.git
+   cd todo-app
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running the Application
+
+To start the development server, run:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Building for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To build the application for production, run:
 
-## Learn More
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+This will create an optimized build in the `out` directory.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Testing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+To run tests, use:
 
-## Deploy on Vercel
+```bash
+npm test
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `pages/`: Contains the Next.js pages for routing.
+- `components/`: Reusable React components.
+\- `store/`: Zustand or Redux store configuration.
+- `utils/`: Utility functions and helpers.
+- `styles/`: CSS and styling files.
+- `public/`: Static files and assets.
+
+
+## License
+
+This project is licensed under the MIT License.
