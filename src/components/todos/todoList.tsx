@@ -160,17 +160,23 @@ const TodoList = () => {
               items={activeTodos.map((todo) => todo.id)}
               strategy={verticalListSortingStrategy}
             >
-              {activeTodos.map((todo) => (
-                <TodoItem
-                  key={todo.id}
-                  todo={todo}
-                  onDelete={handleDelete}
-                  onToggle={toggleTodo}
-                  onEdit={handleEdit}
-                  editingTodo={editingTodo}
-                  setEditingTodo={setEditingTodo}
-                />
-              ))}
+              {activeTodos.length === 0 ? (
+                <p className="text-gray-500 flex items-center justify-center">
+                  No active tasks
+                </p>
+              ) : (
+                activeTodos.map((todo) => (
+                  <TodoItem
+                    key={todo.id}
+                    todo={todo}
+                    onDelete={handleDelete}
+                    onToggle={toggleTodo}
+                    onEdit={handleEdit}
+                    editingTodo={editingTodo}
+                    setEditingTodo={setEditingTodo}
+                  />
+                ))
+              )}
             </SortableContext>
           </div>
         </div>
@@ -191,17 +197,23 @@ const TodoList = () => {
               items={completedTodos.map((todo) => todo.id)}
               strategy={verticalListSortingStrategy}
             >
-              {completedTodos.map((todo) => (
-                <TodoItem
-                  key={todo.id}
-                  todo={todo}
-                  onDelete={handleDelete}
-                  onToggle={toggleTodo}
-                  onEdit={handleEdit}
-                  editingTodo={editingTodo}
-                  setEditingTodo={setEditingTodo}
-                />
-              ))}
+              {completedTodos.length === 0 ? (
+                <p className="text-gray-500 flex items-center justify-center">
+                  No completed tasks
+                </p>
+              ) : (
+                completedTodos.map((todo) => (
+                  <TodoItem
+                    key={todo.id}
+                    todo={todo}
+                    onDelete={handleDelete}
+                    onToggle={toggleTodo}
+                    onEdit={handleEdit}
+                    editingTodo={editingTodo}
+                    setEditingTodo={setEditingTodo}
+                  />
+                ))
+              )}
             </SortableContext>
           </div>
         </div>
